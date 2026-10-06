@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DEP-app</string>
+    <string name="app_subtitle">Earthquake detector using phone sensors</string>
+
+    <string name="status_stopped">Stopped — start monitoring</string>
+    <string name="status_calibrating">Calibrating… keep the phone still</string>
+    <string name="status_monitoring">Monitoring — calm</string>
+    <string name="status_unstable">Phone is moving — detection paused</string>
+    <string name="status_suspicious">Suspicious vibration — analysing…</string>
+    <string name="status_quake">EARTHQUAKE DETECTED!</string>
+
+    <string name="graph_title">Live acceleration (gravity removed)</string>
+    <string name="live_values">Short avg (STA)  : %1$.3f m/s²\nLong avg (LTA)   : %2$.3f m/s²\nSTA/LTA ratio    : %3$.1f\nRotation rate    : %4$.2f rad/s\nAccel. threshold : %5$.2f m/s²</string>
+    <string name="placement_tip">📱 Place the phone on a flat, stable surface (ideally the floor or a solid table). Detection pauses automatically while the phone is held, in a pocket or carried. Works with the screen off.</string>
+
+    <string name="sensitivity_label">Sensitivity: %1$d / 5</string>
+    <string name="sensitivity_hint">1 = strong shaking only · 5 = weak shaking too (more false alarms)</string>
+    <string name="sound_alarm">Alarm sound, vibration and voice warning</string>
+
+    <string name="btn_start">Start Monitoring</string>
+    <string name="btn_stop">Stop Monitoring</string>
+    <string name="btn_simulate">Simulate Earthquake</string>
+    <string name="btn_test">Test Alarm</string>
+    <string name="btn_about">About</string>
+    <string name="btn_clear">Clear Log</string>
+
+    <string name="log_title">Detected events</string>
+    <string name="log_empty">No events yet.</string>
+    <string name="log_line">%1$s %2$s\nPeak acceleration: %3$.2f m/s² (%4$.1f%% g) · Duration: %5$.1f s · Est. intensity: %6$s\nData file: %7$s</string>
+    <string name="sim_tag">[SIMULATION]</string>
+
+    <string name="no_accel">No accelerometer found on this device. The app cannot work.</string>
+    <string name="no_gyro">Warning: this device has no gyroscope. Handling the phone may not be distinguished from an earthquake.</string>
+    <string name="sim_started">Preparing simulation. Leave the phone still; synthetic shaking starts after calibration.</string>
+
+    <string name="channel_monitor">Earthquake monitoring</string>
+    <string name="channel_alarm">Earthquake alarm</string>
+    <string name="notif_monitor_title">DEP-app is monitoring</string>
+    <string name="notif_monitor_text">Listening to accelerometer and gyroscope</string>
+    <string name="notif_stop">Stop</string>
+
+    <string name="alarm_title">EARTHQUAKE DETECTED!</string>
+    <string name="alarm_text">Drop – Cover – Hold on! Estimated intensity: %1$s</string>
+    <string name="alarm_speech">Warning! Earthquake detected. Drop, cover and hold on.</string>
+    <string name="test_alarm_title">Test alarm</string>
+    <string name="test_alarm_text">This is a test alarm.</string>
+    <string name="test_speech">This is a test alarm. Drop, cover and hold on.</string>
+    <string name="dialog_quake_msg">After the shaking stops, check official information from your national earthquake authority.</string>
+    <string name="ok">OK</string>
+
+    <string name="about_title">About</string>
+    <string name="about_text">DEP-app is an experimental project app that tries to detect earthquake shaking using the phone accelerometer and gyroscope.\n\nHow it works\n\n1) Gravity removal: the phone measures acceleration about 50 times per second. A low-pass filter removes gravity, leaving only vibration.\n\n2) STA/LTA: the average vibration of the last 0.5 s (STA) is compared with the last 10 s (LTA). A sudden jump in the ratio means shaking has started. Seismologists use this classic method to pick earthquake waves.\n\n3) Gyroscope check: if the phone is rotating (held, in a pocket, carried) the motion comes from a person, so detection pauses.\n\n4) Duration and continuity: earthquakes shake continuously for seconds, while door slams and footsteps die out quickly. Shaking must therefore last at least 1-2 seconds.\n\n5) Estimated intensity: the Mercalli intensity is estimated from peak acceleration using Wald et al. (1999).\n\nEach event is saved as a CSV file (Android/data/io.github.mustafaadsiz135.depapp/files/kayitlar).\n\nIMPORTANT: this is not an official early-warning system. It only detects shaking where the phone is and cannot warn before shaking starts. Follow your official earthquake authority for information.</string>
+</resources>

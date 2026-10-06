@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DEP-app</string>
+    <string name="app_subtitle">Telefon sensörleriyle deprem algılayıcı</string>
+
+    <string name="status_stopped">Durduruldu — izlemeyi başlatın</string>
+    <string name="status_calibrating">Kalibre ediliyor… telefonu kıpırdatmayın</string>
+    <string name="status_monitoring">İzleniyor — sakin</string>
+    <string name="status_unstable">Telefon hareket ediyor — algılama duraklatıldı</string>
+    <string name="status_suspicious">Şüpheli titreşim — analiz ediliyor…</string>
+    <string name="status_quake">DEPREM ALGILANDI!</string>
+
+    <string name="graph_title">Canlı ivme (yerçekimi çıkarılmış)</string>
+    <string name="live_values">Kısa ort. (STA)  : %1$.3f m/s²\nUzun ort. (LTA)  : %2$.3f m/s²\nSTA/LTA oranı    : %3$.1f\nDönme hızı       : %4$.2f rad/s\nİvme eşiği       : %5$.2f m/s²</string>
+    <string name="placement_tip">📱 Telefonu düz ve sabit bir yüzeye (tercihen yere ya da sağlam bir masaya) koyun. Telefon elde, cepte ya da taşınırken algılama otomatik olarak duraklar. Ekran kapalıyken de çalışır.</string>
+
+    <string name="sensitivity_label">Hassasiyet: %1$d / 5</string>
+    <string name="sensitivity_hint">1 = yalnızca güçlü sarsıntılar · 5 = zayıf sarsıntılar da (yanlış alarm olasılığı artar)</string>
+    <string name="sound_alarm">Sesli alarm, titreşim ve sesli uyarı</string>
+
+    <string name="btn_start">İzlemeyi Başlat</string>
+    <string name="btn_stop">İzlemeyi Durdur</string>
+    <string name="btn_simulate">Deprem Simülasyonu</string>
+    <string name="btn_test">Alarmı Test Et</string>
+    <string name="btn_about">Uygulama Hakkında</string>
+    <string name="btn_clear">Kayıtları Temizle</string>
+
+    <string name="log_title">Algılanan olaylar</string>
+    <string name="log_empty">Henüz olay yok.</string>
+    <string name="log_line">%1$s %2$s\nEn yüksek ivme: %3$.2f m/s² (%%%4$.1f g) · Süre: %5$.1f s · Tahmini şiddet: %6$s\nVeri dosyası: %7$s</string>
+    <string name="sim_tag">[SİMÜLASYON]</string>
+
+    <string name="no_accel">Bu cihazda ivmeölçer bulunamadı. Uygulama çalışamaz.</string>
+    <string name="no_gyro">Uyarı: Bu cihazda jiroskop yok. Telefonu elde tutma hareketleri depremden ayırt edilemeyebilir.</string>
+    <string name="sim_started">Simülasyon hazırlanıyor. Telefonu sabit bırakın; kalibrasyondan sonra yapay sarsıntı başlayacak.</string>
+
+    <string name="channel_monitor">Deprem izleme</string>
+    <string name="channel_alarm">Deprem alarmı</string>
+    <string name="notif_monitor_title">DEP-app deprem izliyor</string>
+    <string name="notif_monitor_text">İvmeölçer ve jiroskop dinleniyor</string>
+    <string name="notif_stop">Durdur</string>
+
+    <string name="alarm_title">DEPREM ALGILANDI!</string>
+    <string name="alarm_text">Çök – Kapan – Tutun! Tahmini şiddet: %1$s</string>
+    <string name="alarm_speech">Dikkat! Deprem algılandı. Çök, kapan, tutun.</string>
+    <string name="test_alarm_title">Test alarmı</string>
+    <string name="test_alarm_text">Bu bir test alarmıdır.</string>
+    <string name="test_speech">Bu bir test alarmıdır. Çök, kapan, tutun.</string>
+    <string name="dialog_quake_msg">Sarsıntı bittikten sonra resmi bilgileri AFAD ve Kandilli Rasathanesi kaynaklarından kontrol edin.</string>
+    <string name="ok">Tamam</string>
+
+    <string name="about_title">Uygulama Hakkında</string>
+    <string name="about_text">DEP-app, akıllı telefondaki ivmeölçer ve jiroskop sensörlerini kullanarak deprem sarsıntısını algılamaya çalışan deneysel bir proje uygulamasıdır.\n\nNasıl çalışır?\n\n1) Yerçekimi ayıklanır: Telefon saniyede yaklaşık 50 kez ivme ölçer. Alçak geçiren filtre ile yerçekimi çıkarılır, geriye yalnızca titreşim kalır.\n\n2) STA/LTA yöntemi: Son 0,5 saniyenin ortalama titreşimi (STA), son 10 saniyenin ortalamasıyla (LTA) karşılaştırılır. Oran aniden yükselirse sarsıntı başlamış demektir. Bu yöntem sismologların deprem dalgalarını yakalamak için kullandığı klasik bir yöntemdir.\n\n3) Jiroskop ile eleme: Telefon döndürülüyorsa (elde, cepte, taşınırken) bu hareket depremden değil insandan kaynaklanır; algılama duraklatılır.\n\n4) Süre ve süreklilik: Deprem saniyelerce sürekli sallar. Kapı çarpması, ayak sesi gibi kısa darbeler hemen söner. Bu yüzden sarsıntının en az 1-2 saniye sürekli olması beklenir.\n\n5) Tahmini şiddet: Ölçülen en yüksek ivmeden Wald ve diğerleri (1999) bağıntısıyla Mercalli şiddeti tahmin edilir.\n\nHer olayın verisi CSV dosyası olarak telefona kaydedilir (Android/data/io.github.mustafaadsiz135.depapp/files/kayitlar).\n\nÖNEMLİ: Bu uygulama resmi bir erken uyarı sistemi değildir. Yalnızca telefonun bulunduğu yerdeki sarsıntıyı algılar; sarsıntı başlamadan önce uyarı veremez. Resmi deprem bilgisi için AFAD ve Kandilli Rasathanesi kaynaklarını takip edin.</string>
+</resources>

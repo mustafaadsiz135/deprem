@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_bg">#B71C1C</color>
+    <color name="primary">#B71C1C</color>
+    <color name="primary_dark">#7F0000</color>
+
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorAccent">@color/primary</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+    </style>
+</resources>
